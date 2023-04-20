@@ -1,4 +1,4 @@
-import { ContentChild, Directive, ElementRef, QueryList } from '@angular/core';
+import { ContentChild, Directive, ElementRef } from '@angular/core';
 function getCoord( elementParent:HTMLElement,tooltip:HTMLElement){
   const boxParent = elementParent.getBoundingClientRect()
   const boxToolTip = tooltip.getBoundingClientRect()
@@ -35,10 +35,10 @@ ngAfterViewInit(){
   currentElement.style.left = `${pos[0]}px`
   currentElement.style.top = `${pos[1]}px`
   currentElement.hidden = true;
-  this.parent.addEventListener("mouseover",function t(e:any){
+  this.parent.addEventListener("mouseover",function t(_:any){
     currentElement.hidden = false;
   })
-  this.parent.addEventListener("mouseout",function t(e:any){
+  this.parent.addEventListener("mouseout",function t(_:any){
     currentElement.hidden = true;
   })
   
