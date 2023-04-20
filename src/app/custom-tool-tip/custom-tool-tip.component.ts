@@ -4,7 +4,6 @@ function getCoord( elementParent:HTMLElement,tooltip:HTMLElement){
   const boxToolTip = tooltip.getBoundingClientRect()
   let left = (boxParent.left  + (boxParent.width/2)) - (boxToolTip.width/2)
   left = (boxParent.left - (boxToolTip.width/2)) + ((boxParent.width-boxToolTip.width)/2)
-  console.log(elementParent.innerText)
   let top = 0;
   if(boxParent.y > boxToolTip.height){
     top = boxParent.top - boxToolTip.height
@@ -37,7 +36,6 @@ ngAfterViewInit(){
   currentElement.style.top = `${pos[1]}px`
   currentElement.hidden = true;
   this.parent.addEventListener("mouseover",function t(e:any){
-    console.log("allo")
     currentElement.hidden = false;
   })
   this.parent.addEventListener("mouseout",function t(e:any){
